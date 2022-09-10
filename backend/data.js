@@ -30,7 +30,7 @@ const data = {
       category: "Pants",
       image: "/images/p3.jpg",
       price: 220,
-      countInStock: 15,
+      countInStock: 0,
       brand: "UnderArmour",
       rating: 4.5,
       numReviews: 14,
