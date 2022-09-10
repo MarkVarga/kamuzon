@@ -1,34 +1,23 @@
 import "./App.css";
-import data from "./data";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import HomeScreen from "./view/HomeScreen";
+import ProductScreen from "./view/ProductScreen";
 
 function App() {
   return (
-    <div>
-      <header>
-        <a href="/">kamuzon</a>
-      </header>
-      <main>
-        <h1>Featured Products</h1>
-        <div className="products">
-          {data.products.map((prod) => (
-            <div className="product" key={prod.slug}>
-              <a href={`/product/${prod.slug}`}>
-                <img src={prod.image} alt={prod.name} />
-              </a>
-              <div className="product-info">
-                <a href={`/product/${prod.slug}`}>
-                  <p>{prod.name}</p>
-                </a>
-                <p>
-                  <strong>${prod.price}</strong>
-                </p>
-                <button>Add to cart</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div>
+        <header>
+          <Link to="/">kamuzon</Link>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
