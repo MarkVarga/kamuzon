@@ -1,5 +1,5 @@
 import { useContext, useEffect, useReducer } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 };
 
 const ProductScreen = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
 
@@ -78,6 +79,7 @@ const ProductScreen = () => {
         quantity,
       },
     });
+    navigate("/cart");
   };
 
   return loading ? (
