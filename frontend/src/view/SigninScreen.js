@@ -43,7 +43,7 @@ const SigninScreen = () => {
     if (userInfo) {
       navigate(redirect);
     }
-  }, [navigate, redirect]);
+  }, [navigate, redirect, userInfo]);
 
   return (
     <Container className="small-container">
