@@ -14,6 +14,7 @@ import { useContext } from "react";
 import { Store } from "./Store";
 import CartScreen from "./view/CartScreen";
 import SigninScreen from "./view/SigninScreen";
+import SignupScreen from "./view/SignUpScreen";
 import ShippingAddressScreen from "./view/ShippingAddressScreen";
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/signup" element={<SignupScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
